@@ -1,0 +1,1 @@
+<?php	class Debug	{				public static function message($message, $title = null)		{			$date = time();			$title = is_null($title) ? '' : "[$title]";			echo "<p><b>DEBUG</b> - [$date]$title $message</p>";		}			}?>

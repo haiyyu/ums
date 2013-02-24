@@ -1,0 +1,21 @@
+Pseudo Code
+
+entries = get from database ( sort by order, id ) // sort by order, if thats not set, sort by id
+
+lastOrder = -1 // order of last item
+for each entry in entries do
+	if order of entry = not set then
+		if lastOrder = -1 then
+			order of entry = 0
+		else
+			order of entry = lastOrder + 1
+		end
+		
+		write to database ( for entry set order to (order of entry) )
+	end
+	
+	lastOrder = order of entry
+end
+
+
+

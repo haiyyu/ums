@@ -1,0 +1,1 @@
+<?php	interface TableEditorListener	{		// GUI-related		public function onDisplayList();		public function onEdit($id);		public function onCreate();				// function-related		public function onDeleted($id);		public function onSaved($id);		public function onSwapped($id1, $id2);	}?>

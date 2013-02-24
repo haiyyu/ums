@@ -1,0 +1,1 @@
+Hier können Sie Verändungen an Ihrem Profil durchführen.<hr /><?php	require_once('classes/tableeditor.php');	require_once('classes/user.php');	require_once('proc.php');	$editor = new TableEditor(User::$table, Login::getCurrentUser()->getID());	$editor->show();?>

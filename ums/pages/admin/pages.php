@@ -1,0 +1,1 @@
+<?php	require_once('classes/tableeditor.php');	require_once('classes/page.php');	$editor = new TableEditor(Page::$table);	$editor->show();		if (!isset($_GET['tMode']) || $_GET['tMode'] == 'list')	{?><hr /><p><a href="?page=pages&tMode=create">Seitenzuweisung manuell erstellen</a></p><?php	}?>

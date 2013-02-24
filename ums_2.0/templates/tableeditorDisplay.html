@@ -1,0 +1,44 @@
+<?php
+	require_once('classes/langvar.php');
+	require_once('classes/url.php');
+	
+	//print_r($t);
+?>
+<table>
+	<tr>
+		<td><?php echo LangVar::get('tableeditor.edit'); ?></td>
+	<?php foreach ($t['titleColumns'] as $c) { ?>
+		<td><?php echo LangVar::get($c); ?></td>
+	<?php } ?>
+	</tr>
+	<?php for ($i = 0; $i < count($t['rows']); $i++) {
+		$r = $t['rows'][$i];
+		$editUrl = URL::getString(array('tMode' => 'edit', 'tId' => $r['columns']['id']));
+		$deleteUrl = URL::getString(array('tMode' => 'delete', 'tId' => $r['columns']['id']));
+		$moveUpUrl = URL::getString(array('tMode' => 'swap', 'tId1' => $t['rows'][$i - 1]['columns']['id'], 'tId2' => $r['columns']['id'])); 
+		$moveDownUrl = URL::getString(array('tMode' => 'swap', 'tId1' => $r['columns']['id'], 'tId2' => $t['rows'][$i + 1]['columns']['id']));
+	?>
+		<?php if ($t['canEdit']) { ?>
+		<tr onclick="document.location='<?php echo $editUrl; ?>'">
+		<?php } else { ?>
+		<tr>
+		<?php }?>
+			<td>
+		<?php if ($t['canDelete']) { ?>
+				<a href="<?php echo $deleteUrl; ?>">x</a>
+		<?php } ?>
+		<?php if ($t['canMove']) { ?>
+			<?php if ($i > 0) { ?>
+				<a href="<?php echo $moveUpUrl; ?>">^</a>
+			<?php } ?>
+			<?php if ($i < count($t['rows']) - 1) { ?>
+				<a href="<?php echo $moveDownUrl; ?>">v</a>
+			<?php } ?>
+		<?php } ?>
+			</td>
+		<?php foreach ($r['columns'] as $c) { ?>
+			<td><?php echo $c; ?></td>
+		<?php } ?>
+		</tr>
+	<?php } ?>
+</table>

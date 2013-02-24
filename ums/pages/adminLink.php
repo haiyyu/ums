@@ -1,0 +1,1 @@
+<a href="admin.php">Klicken Sie hier, um zur Administration zu gelangen.</a>

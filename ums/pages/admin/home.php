@@ -1,0 +1,1 @@
+<h2>Willkommen auf der Administration der Seite.</h2>Hier können Sie die Benutzer sowie verschiedene andere Dinge ihrer Webseite bearbeiten.Bitte seien Sie vorsichtig und führen Sie in diesem Bereich der Seite nur Veränderungen durch, wenn Sie wissen, was Sie tun.
